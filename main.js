@@ -14,11 +14,11 @@ const app = new Vue({
 
     },
     created() {
-        // Make a request for a user with a given ID
+        
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(function (response) {
+            .then((response) => {
                 // handle success
-                console.log(response.data.response);
+                this.emails.push(response.data.response);
             })
             .catch(function (error) {
                 // handle error
